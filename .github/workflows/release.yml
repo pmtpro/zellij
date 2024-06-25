@@ -15,11 +15,16 @@ jobs:
     strategy:
       matrix:
         build:
+          - linux android aarch64
           - linux musl x64
           - linux musl aarch64
           - macos x64
           - macos aarch64
         include:
+          - build: linux android aarch64
+            os: ubuntu-latest
+            rust: stable
+            target: aarch64-linux-android
           - build: linux musl x64
             os: ubuntu-latest
             rust: stable
